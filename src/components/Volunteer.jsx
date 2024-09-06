@@ -15,7 +15,7 @@ const Volunteer = () => {
         <ul className="max-w-5xl mx-auto mb-10 md:mb-14 space-y-6">
           <li className="p-6 bg-color-4 shadow-md rounded-lg">
             <div className="flex items-start">
-              <div className="ml-4 text-center">
+              <div className=" text-center">
                 <h6 className="body-2 md:text-2xl text-lg font-semibold">
                   Volunteer With Us
                 </h6>
@@ -34,7 +34,7 @@ const Volunteer = () => {
           </li>
           <li className="p-6 bg-color-4 shadow-md rounded-lg">
             <div className="flex items-start">
-              <div className="ml-4 text-center">
+              <div className="text-center">
                 <h6 className="body-2 md:text-2xl text-lg font-semibold">
                   Benefits of Volunteering
                 </h6>
