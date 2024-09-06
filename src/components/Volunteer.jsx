@@ -66,7 +66,7 @@ const Volunteer = () => {
                 <h6 className="body-2 md:text-2xl text-lg font-semibold">
                   Volunteer Opportunities
                 </h6>
-                <p className="body-2 md:text-xl mt-3 text-n-1">
+                <p className="body-2 md:text-xl mt-3 text-n-1 leading-relaxed">
                   Looking for a way to make a difference in your community? Join
                   our team of volunteers and help us make a positive impact on
                   the world! We are looking for passionate individuals who are
