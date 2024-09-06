@@ -7,7 +7,7 @@ const Volunteer = () => {
     <Section id="volunteer" crosses>
       <div className="container relative z-2 text-center">
         <Heading className="md:max-w-md lg:max-w-2xl" title="Volunteer" />
-        <p className="body-1 max-w mx-auto mb-6 mt-10">
+        <p className="body-1 mx-auto mb-6 mt-10">
           Join us in making a difference. Your contribution can empower
           communities, uplift individuals, and transform futures. Together, we
           can unlock a world of possibilities.
@@ -66,7 +66,7 @@ const Volunteer = () => {
                 <h6 className="body-2 md:text-2xl text-lg font-semibold">
                   Volunteer Opportunities
                 </h6>
-                <p className="body-2 md:text-xl mt-3 text-n-1 leading-relaxed">
+                <p className="body-2 md:text-xl mt-3 text-n-1">
                   Looking for a way to make a difference in your community? Join
                   our team of volunteers and help us make a positive impact on
                   the world! We are looking for passionate individuals who are
