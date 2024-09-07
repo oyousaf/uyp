@@ -56,7 +56,7 @@ const Header = () => {
                 key={item.id}
                 href={item.url}
                 onClick={handleClick}
-                className={`block relative font-code text-3xl uppercase text-n-1 transition-colors hover:text-color-3 ${
+                className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-5 ${
                   item.onlyMobile ? "lg:hidden" : ""
                 } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-base lg:font-semibold ${
                   item.url === pathname.hash
@@ -73,7 +73,7 @@ const Header = () => {
           <HamburgerMenu />
         </nav>
         <div className="hidden lg:flex flex-col items-center">
-          <Button className="mt-4 mb-4" href="#donate">
+          <Button className="mt-4 mb-4 hover:text-color-5" href="#donate">
             Donate
           </Button>
           <ul className="flex gap-5 flex-wrap">
@@ -83,7 +83,7 @@ const Header = () => {
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-7 h-7 mb-4 bg-n-3 hover:bg-n-6 hover:text-xl rounded-full transition-all"
+                className="flex items-center justify-center w-7 h-7 mb-4 bg-n-3 hover:bg-n-8 hover:text-xl rounded-full transition-all"
               >
                 <item.icon className="text-color-5" />
               </a>
