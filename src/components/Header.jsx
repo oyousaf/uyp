@@ -8,6 +8,8 @@ import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import { useState } from "react";
 
+import { Link } from "react-scroll";
+
 const Header = () => {
   const pathname = useLocation();
 
@@ -37,13 +39,13 @@ const Header = () => {
       }`}
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
-        <a
-          className="block lg:w-[12rem] w-[5rem] xl:mr-8"
-          href="#home"
+        <Link
+          className="block lg:w-[12rem] w-[5rem] xl:mr-8 cursor-pointer"
+          to="home"
           rel="noopener noreferrer"
         >
           <img src={uypLogo} width={100} height={50} alt="UYP" />
-        </a>
+        </Link>
 
         <nav
           className={`${
@@ -52,11 +54,11 @@ const Header = () => {
         >
           <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row font-bold">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.id}
-                href={item.url}
+                to={item.url}
                 onClick={handleClick}
-                className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-4 ${
+                className={`block relative cursor-pointer font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-4 ${
                   item.onlyMobile ? "lg:hidden" : ""
                 } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-base lg:font-semibold ${
                   item.url === pathname.hash
@@ -66,16 +68,16 @@ const Header = () => {
                 rel="noopener noreferrer"
               >
                 {item.title}
-              </a>
+              </Link>
             ))}
           </div>
 
           <HamburgerMenu />
         </nav>
         <div className="hidden lg:flex flex-col items-center">
-          <Button className="mt-4 mb-4 hover:text-color-4" href="#donate">
-            Donate
-          </Button>
+          <Link to="donate">
+            <Button className="mt-4 mb-4 hover:text-color-4">Donate</Button>
+          </Link>
           <ul className="flex gap-5 flex-wrap">
             {socials.map((item) => (
               <a
