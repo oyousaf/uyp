@@ -20,7 +20,7 @@ const Values = () => {
               key={item.id}
             >
               <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
-                <h5 className="h5 mb-5 text-2xl text-center text-color-5">{item.title}</h5>
+                <h5 className="h5 mb-5 text-2xl text-center text-color-4">{item.title}</h5>
                 <p className="body-2 text-xl mt-6 mb-6 text-center">
                   {item.text}
                 </p>

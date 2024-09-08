@@ -17,7 +17,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="flex items-center justify-center w-10 h-10 bg-n-3 hover:bg-n-8 text-xl hover:text-2xl rounded-full transition-all"
             >
-              <item.icon className="text-color-5" />
+              <item.icon className="text-color-4" />
             </a>
           ))}
         </ul>
