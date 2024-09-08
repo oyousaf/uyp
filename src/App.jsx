@@ -19,7 +19,7 @@ const App = () => {
       </div>
       <ButtonGradient />
     </>
-  );``
+  );
 };
 
 export default App;
