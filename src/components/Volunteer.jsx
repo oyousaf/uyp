@@ -111,7 +111,7 @@ const Volunteer = () => {
                   <br />
                   <br />
                   <a
-                    className="md:text-2xl text-xl"
+                    className="md:text-2xl text-xl font-semibold"
                     href="mailto:hello@unlockyourpotential.org.uk"
                     rel="noopener noreferrer"
                   >
