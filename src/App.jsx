@@ -43,12 +43,13 @@ const App = () => {
       <ButtonGradient />
       {showScroll && (
         <div
+        className="w-10"
           onClick={scrollToTop}
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
           style={{
             position: "fixed",
-            bottom: "90px",
+            bottom: "50px",
             right: "50px",
             cursor: "pointer",
             background: hover ? "#ED872D" : "#C34A2C",
