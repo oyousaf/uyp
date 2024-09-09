@@ -59,7 +59,6 @@ const App = () => {
             padding: "15px",
             zIndex: 1000,
             fontSize: "24px",
-            
           }}
         >
           <FaArrowUp />
