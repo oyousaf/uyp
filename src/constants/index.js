@@ -125,36 +125,36 @@ export const volunteer = [
     id: 0,
     title: "Trustees",
     description:
-      "Meets quarterly to make key governance decisions and helps steer and direct the charity.",
+      "Meets quarterly to make key governance decisions and helps steer and direct the charity",
   },
   {
     id: 1,
     title: "Treasurer/Accountant",
     description:
-      "Helps ensure our financial sustainability and effective management of finances.",
+      "Helps ensure our financial sustainability and effective management of finances",
   },
   {
     id: 2,
     title: "Operations Manager",
-    description: "Helps run the day-to-day aspects of Unlock Your Potential.",
+    description: "Helps run the day-to-day aspects of Unlock Your Potential",
   },
   {
     id: 3,
     title: "Volunteer Coordinator",
     description:
-      "Recruits, selects and trains volunteers, creating a volunteer programme at our org.",
+      "Recruits, selects and trains volunteers, creating a volunteer programme at our org",
   },
   {
     id: 4,
     title: "Graphic Designer",
     description:
-      "Create digital and print based designs such as posters and social media posts.",
+      "Create digital and print based designs such as posters and social media posts",
   },
   {
     id: 5,
     title: "Website Designer",
     description:
-      "Create a better multi-purpose website that suits our charity better.",
+      "Create a better multi-purpose website that suits our charity better",
   },
 ];
 
@@ -257,7 +257,7 @@ export const values = [
   {
     id: "0",
     title: "Empowerment",
-    text: "We believe in empowering individuals to take control of their lives and reach their full potential.",
+    text: "We believe in empowering individuals to take control of their lives and reach their full potential",
     backgroundUrl: "assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,
     imageUrl: benefitImage2,
@@ -265,7 +265,7 @@ export const values = [
   {
     id: "1",
     title: "Inclusivity",
-    text: "We are committed to creating an inclusive environment that welcomes and supports people from all backgrounds.",
+    text: "We are committed to creating an inclusive environment that welcomes and supports people from all backgrounds",
     backgroundUrl: "assets/benefits/card-2.svg",
     iconUrl: benefitIcon2,
     imageUrl: benefitImage2,
@@ -274,7 +274,7 @@ export const values = [
   {
     id: "2",
     title: "Collaboration",
-    text: "We believe in working together with our community and partners to achieve our goals.",
+    text: "We believe in working together with our community and partners to achieve our goals",
     backgroundUrl: "assets/benefits/card-3.svg",
     iconUrl: benefitIcon3,
     imageUrl: benefitImage2,
@@ -282,7 +282,7 @@ export const values = [
   {
     id: "3",
     title: "Continuous Improvement",
-    text: "We are dedicated to continuously improving our programmes and services to better serve our beneficiaries.",
+    text: "We are dedicated to continuously improving our programmes and services to better serve our beneficiaries",
     backgroundUrl: "assets/benefits/card-4.svg",
     iconUrl: benefitIcon4,
     imageUrl: benefitImage2,
@@ -291,7 +291,7 @@ export const values = [
   {
     id: "4",
     title: "Social Responsibility",
-    text: "We recognise our responsibility to contribute to the betterment of society and to promote social mobility for all.",
+    text: "We recognise our responsibility to contribute to the betterment of society and to promote social mobility for all",
     backgroundUrl: "assets/benefits/card-5.svg",
     iconUrl: benefitIcon2,
     imageUrl: benefitImage2,
