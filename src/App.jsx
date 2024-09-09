@@ -12,7 +12,6 @@ import { FaArrowUp } from "react-icons/fa";
 
 const App = () => {
   const [showScroll, setShowScroll] = useState(false);
-  const [hover, setHover] = useState(false);
 
   const checkScrollTop = () => {
     if (!showScroll && window.pageYOffset > 500) {
@@ -43,23 +42,8 @@ const App = () => {
       <ButtonGradient />
       {showScroll && (
         <div
-        className="w-10"
           onClick={scrollToTop}
-          onMouseEnter={() => setHover(true)}
-          onMouseLeave={() => setHover(false)}
-          style={{
-            position: "fixed",
-            bottom: "50px",
-            right: "50px",
-            cursor: "pointer",
-            background: hover ? "#ED872D" : "#C34A2C",
-            transition: "background 0.3s ease",
-            color: hover? "#005989" : "#fff",
-            borderRadius: "100%",
-            padding: "15px",
-            zIndex: 1000,
-            fontSize: "24px",
-          }}
+          className="fixed z-[1000] bottom-12 right-12 md:bottom-8 md:right-8 bg-color-1 hover:bg-color-2 text-n-1 p-4 rounded-full transition-all duration-300 ease-in-out cursor-pointer text-2xl md:text-xl"
         >
           <FaArrowUp />
         </div>
