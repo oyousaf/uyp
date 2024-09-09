@@ -7,7 +7,12 @@ const Footer = () => {
     <Section className="!px-0 !py-10" id="footer" crosses>
       <div className="container flex sm:justify-between justify-center items-center gap-10 max-sm:flex-col">
         <p className="text-md text-n-1 lg:block">
-          <Link to="home" className="cursor-pointer">
+          <Link
+            to="home"
+            smooth={true}
+            duration={300}
+            className="cursor-pointer"
+          >
             &copy; {new Date().getFullYear()} Unlock Your Potential
           </Link>
         </p>

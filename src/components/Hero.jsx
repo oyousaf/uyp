@@ -5,7 +5,7 @@ import { BackgroundCircles } from "./design/Hero";
 import { heroIcons } from "../constants";
 import { ScrollParallax } from "react-just-parallax";
 import { useRef } from "react";
-
+import { Link } from "react-scroll";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -37,9 +37,9 @@ const Hero = () => {
             their full potential, no matter their background. We believe in you
             and are here to support you every step of the way.
           </p>
-          <Button href="#about" white>
-            Explore
-          </Button>
+          <Link to="about">
+            <Button white>Explore</Button>
+          </Link>
         </div>
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl">
           <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient ">
