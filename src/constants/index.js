@@ -298,34 +298,28 @@ export const values = [
   },
 ];
 
-import { FaTelegramPlane, FaSnapchatGhost } from "react-icons/fa";
+import { FaTelegramPlane } from "react-icons/fa";
 
-import {
-  FaMeta,
-  FaInstagram,
-  FaX,
-  FaRedditAlien,
-  FaLinkedinIn,
-} from "react-icons/fa6";
+import { FaInstagram, FaX, FaLinkedinIn, FaFacebookF } from "react-icons/fa6";
 
 export const socials = [
   {
     id: "0",
+    title: "facebook",
+    icon: FaFacebookF,
+    url: "https://facebook.com/",
+  },
+  {
+    id: "1",
     title: "instagram",
     icon: FaInstagram,
     url: "https://instagram.com/",
   },
   {
-    id: "1",
+    id: "2",
     title: "linkedin",
     icon: FaLinkedinIn,
     url: "https://linkedin.com/",
-  },
-  {
-    id: "2",
-    title: "meta",
-    icon: FaMeta,
-    url: "https://meta.com/gb",
   },
   {
     id: "3",
