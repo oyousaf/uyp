@@ -329,24 +329,12 @@ export const socials = [
   },
   {
     id: "3",
-    title: "reddit",
-    icon: FaRedditAlien,
-    url: "https://reddit.com/",
-  },
-  {
-    id: "4",
-    title: "snap",
-    icon: FaSnapchatGhost,
-    url: "https://snapchat.com/",
-  },
-  {
-    id: "5",
     title: "telegram",
     icon: FaTelegramPlane,
     url: "https://telegram.org/",
   },
   {
-    id: "6",
+    id: "4",
     title: "x",
     icon: FaX,
     url: "https://x.com/",
