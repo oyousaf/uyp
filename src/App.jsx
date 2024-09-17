@@ -43,7 +43,7 @@ const App = () => {
       {showScroll && (
         <div
           onClick={scrollToTop}
-          className="fixed z-[1000] bottom-12 right-12 md:bottom-8 md:right-8 bg-color-1 hover:bg-color-3 text-n-1 hover:text-color-4 p-4 rounded-full transition-all duration-300 ease-in-out cursor-pointer text-2xl md:text-xl"
+          className="fixed z-5 bottom-12 right-12 md:bottom-8 md:right-8 bg-color-1 hover:bg-color-3 text-n-1 hover:text-color-4 p-4 rounded-full transition-all duration-300 ease-in-out cursor-pointer text-2xl md:text-xl"
         >
           <FaArrowUp />
         </div>
