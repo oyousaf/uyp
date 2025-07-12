@@ -1,7 +1,6 @@
 import { values } from "../constants";
 import Heading from "./Heading";
 import Section from "./Section";
-
 import ClipPath from "../assets/svg/ClipPath";
 
 const Values = () => {
@@ -11,38 +10,51 @@ const Values = () => {
         <Heading
           className="md:max-w-md lg:max-w-2xl text-center"
           title="Our Values"
+          as="h2"
         />
-        <div className="flex flex-wrap gap-10 mb-10 mt-10">
-          {values.map((item) => (
-            <div
-              className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
-              style={{ backgroundImage: `url(${item.backgroundUrl})` }}
-              key={item.id}
+
+        <div className="flex flex-wrap justify-center gap-10 mt-10 mb-10">
+          {values.map(({ id, title, text, imageUrl, backgroundUrl }) => (
+            <article
+              key={id}
+              className="relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem] w-full rounded-xl overflow-hidden shadow-sm transition-transform hover:scale-[1.015]"
+              style={{ backgroundImage: `url(${backgroundUrl})` }}
+              aria-labelledby={`value-${id}`}
             >
-              <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
-                <h5 className="h5 mb-5 text-2xl text-center text-color-4 font-bold">{item.title}</h5>
-                <p className="body-2 text-xl mt-6 mb-6 text-center">
-                  {item.text}
+              <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none text-center">
+                <h3
+                  id={`value-${id}`}
+                  className="h5 text-2xl text-color-4 font-bold mb-5"
+                >
+                  {title}
+                </h3>
+                <p className="body-2 text-xl text-n-1 leading-relaxed">
+                  {text}
                 </p>
               </div>
+
+              {/* Clip path background image */}
               <div
                 className="absolute inset-0.5 bg-n-8"
                 style={{ clipPath: "url(#values)" }}
+                aria-hidden="true"
               >
-                <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
-                  {item.imageUrl && (
+                {imageUrl && (
+                  <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
                     <img
-                      src={item.imageUrl}
+                      src={imageUrl}
+                      alt=""
                       width={380}
                       height={362}
-                      alt={item.title}
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
+
               <ClipPath />
-            </div>
+            </article>
           ))}
         </div>
       </div>

@@ -5,125 +5,93 @@ import Section from "./Section";
 const Volunteer = () => {
   return (
     <Section id="volunteer" crosses>
-      <div className="container relative w-full text-center">
+      <div className="container relative text-center">
         <Heading
           className="md:max-w-md lg:max-w-2xl mx-auto"
           title="Volunteer"
+          as="h2"
         />
-        <p className="body-1 mx-auto mb-6 mt-10 text-base sm:text-lg">
+
+        <p className="body-1 mx-auto mt-10 mb-6 max-w-3xl text-base sm:text-lg">
           Join us in making a difference. Your contribution can empower
-          communities, uplift individuals, and transform futures. Together, we
-          can unlock a world of possibilities.
+          communities, uplift individuals, and transform futures.
         </p>
-        <ul className="max-w-5xl mx-auto mb-10 md:mb-14 space-y-6">
-          <li className="p-4 sm:p-6 bg-color-4 shadow-md rounded-lg">
-            <div className="flex items-start flex-wrap">
-              <div className="w-full text-center">
-                <h6 className="body-2 text-lg sm:text-xl md:text-2xl font-semibold">
-                  Volunteer With Us
-                </h6>
-                <p className="body-2 text-base sm:text-lg md:text-xl mt-3 text-n-1 leading-relaxed">
-                  Welcome to the world of volunteering! You are about to embark
-                  on a journey that will not only change the lives of those you
-                  serve, but also your own. As a volunteer, you have the power
-                  to make a difference in your community and beyond. We will
-                  support you from introducing you to our organisation's mission
-                  to providing you with resources for personal and professional
-                  growth, we are committed to supporting you every step of the
-                  way. So let's get started on this exciting adventure together!
-                </p>
-              </div>
-            </div>
+
+        <ul className="max-w-5xl mx-auto space-y-8 md:space-y-10">
+          {/* Section 1 */}
+          <li className="p-4 sm:p-6 bg-color-4 shadow-md rounded-lg text-left">
+            <h3 className="text-xl sm:text-2xl font-semibold text-center mb-4">
+              Volunteer With Us
+            </h3>
+            <p className="text-base sm:text-lg md:text-xl text-n-1 leading-relaxed">
+              Welcome to the world of volunteering! As a volunteer, you have the
+              power to make a real difference. From being introduced to our
+              mission, to accessing resources that help you grow — we support
+              you every step of the way. Join us on this exciting journey of
+              impact and personal growth.
+            </p>
           </li>
-          <li className="p-4 sm:p-6 bg-color-4 shadow-md rounded-lg">
-            <div className="flex items-start flex-wrap">
-              <div className="w-full text-center">
-                <h6 className="body-2 text-lg sm:text-xl md:text-2xl font-semibold">
-                  Benefits of Volunteering
-                </h6>
-                <p className="body-2 text-base sm:text-lg md:text-xl mt-3 text-n-1 leading-relaxed">
-                  Volunteering offers numerous benefits, including improved
-                  physical and mental health, a sense of purpose, and the
-                  opportunity to meet new people and make new friends.
-                  Volunteering can also provide relevant work experience, help
-                  you develop new skills, and strategically bolster your CV.
-                  Additionally, volunteering can reduce stress and increase
-                  positive, relaxed feelings by releasing dopamine. Other
-                  benefits of volunteering include the opportunity to give back
-                  to your community, make a positive impact on the world, and
-                  gain a sense of fulfilment and personal satisfaction. Overall,
-                  volunteering is a great way to improve your well-being,
-                  connect with others, and make a difference in the world.
-                  <br />
-                  <br /> We will also give you a reference after volunteering
-                  with us and having that you volunteered with us at Unlock Your
-                  Potential with also give your career and opportunities a huge
-                  boost.
-                </p>
-              </div>
-            </div>
+
+          {/* Section 2 */}
+          <li className="p-4 sm:p-6 bg-color-4 shadow-md rounded-lg text-left">
+            <h3 className="text-xl sm:text-2xl font-semibold text-center mb-4">
+              Benefits of Volunteering
+            </h3>
+            <p className="text-base sm:text-lg md:text-xl text-n-1 leading-relaxed">
+              Volunteering improves mental well-being, builds purpose, and grows
+              your network. You'll develop skills, gain experience, reduce
+              stress, and boost your CV — all while making a meaningful
+              difference.
+              <br />
+              <br />
+              We also provide formal references for active volunteers. Having
+              "volunteered at Unlock Your Potential" can boost your career
+              prospects.
+            </p>
           </li>
-          <li className="p-4 sm:p-6 bg-color-4 shadow-md rounded-lg">
-            <div className="flex items-start flex-wrap">
-              <div className="w-full text-center">
-                <h6 className="body-2 text-lg sm:text-xl md:text-2xl font-semibold">
-                  Volunteer Opportunities
-                </h6>
-                <p className="body-2 text-base sm:text-lg md:text-xl mt-3 text-n-1 leading-relaxed">
-                  Looking for a way to make a difference in your community? Join
-                  our team of volunteers and help us make a positive impact on
-                  the world! We are looking for passionate individuals who are
-                  committed to making a difference and want to give back to
-                  their community. Whether you have a few hours a week or a few
-                  hours a month, we have a volunteer opportunity that is perfect
-                  for you.
-                  <br /> As a volunteer, you will have the opportunity to work
-                  with a team of like-minded individuals who share your passion
-                  for making a difference. You will gain valuable experience,
-                  develop new skills, and make lasting connections with people
-                  in your community. Our volunteer opportunities are flexible
-                  and can be tailored to fit your schedule and interests, we
-                  have a volunteer opportunity that is perfect for you.
-                  <br />
-                  <br />
-                  Some of the available roles we have available include:
-                  <br />
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 p-4">
-                    {volunteer.map((item) => (
-                      <div
-                        key={item.id}
-                        className="bg-n-4 shadow-md rounded-lg p-4 transition transform hover:-translate-y-2"
-                      >
-                        <h3 className="text-lg sm:text-xl font-semibold text-n-2 mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-base text-n-1">{item.description}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <br />
-                  <p className="font-bold">
-                    Can't see a role suitable for you? Don't worry, get in touch
-                    I am sure we are able to support you in creating a role.
-                  </p>
-                  <br />
-                  <p>
-                    Join us today and contribute to a greater cause. Together,
-                    we can make a significant impact and build a better world
-                    for all. Reach out now to discover more about our volunteer
-                    opportunities and how you can get involved:
-                  </p>
-                  <br />
-                  <a
-                    className="md:text-2xl text-xl font-semibold"
-                    href="mailto:hello@unlockyourpotential.org.uk"
-                    rel="noopener noreferrer"
-                  >
-                    hello@unlockyourpotential.org.uk
-                  </a>
-                </p>
-              </div>
+
+          {/* Section 3 */}
+          <li className="p-4 sm:p-6 bg-color-4 shadow-md rounded-lg text-left">
+            <h3 className="text-xl sm:text-2xl font-semibold text-center mb-4">
+              Volunteer Opportunities
+            </h3>
+            <p className="text-base sm:text-lg md:text-xl text-n-1 leading-relaxed mb-6">
+              Whether you’ve got a few hours a week or just one a month, we have
+              roles for you. You'll join passionate people and gain valuable
+              experience while helping your community.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              {volunteer.map((item) => (
+                <div
+                  key={item.id}
+                  className="bg-n-4 shadow-md rounded-lg p-4 hover:-translate-y-2 transition"
+                >
+                  <h4 className="text-lg sm:text-xl font-semibold text-n-2 mb-2">
+                    {item.title}
+                  </h4>
+                  <p className="text-base text-n-1">{item.description}</p>
+                </div>
+              ))}
             </div>
+
+            <p className="font-bold mt-8">
+              Don’t see the right role? Let us know — we may be able to create
+              one for you.
+            </p>
+
+            <p className="mt-4">
+              Join us and contribute to a greater cause. Let’s build a better
+              world together. Reach out now to discover more:
+            </p>
+
+            <a
+              className="block mt-4 md:text-2xl text-xl font-semibold text-color-4 underline"
+              href="mailto:hello@unlockyourpotential.org.uk"
+              rel="noopener noreferrer"
+            >
+              hello@unlockyourpotential.org.uk
+            </a>
           </li>
         </ul>
       </div>

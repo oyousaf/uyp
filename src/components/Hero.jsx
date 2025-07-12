@@ -1,4 +1,4 @@
-import { curve, heroBackground, robot } from "../assets";
+import { curve, robot } from "../assets";
 import Button from "./Button";
 import Section from "./Section";
 import { BackgroundCircles } from "./design/Hero";
@@ -12,23 +12,26 @@ const Hero = () => {
 
   return (
     <Section
+      id="home"
       className="pt-[12rem] -mt-[5.25rem]"
+      customPaddings
       crosses
       crossesOffset="lg:translate-y-[5.25rem]"
-      customPaddings
-      id="home"
     >
       <div className="container relative" ref={parallaxRef}>
+        {/* Text Block */}
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
           <h1 className="h1 mb-6">
             <span className="inline-block relative">
-              Realise Your Full Potential{" "}
+              Realise Your Full Potential
               <img
                 src={curve}
                 className="absolute top-full left-0 w-full xl:-mt-2"
                 width={624}
                 height={28}
-                alt="curve"
+                loading="lazy"
+                alt=""
+                aria-hidden="true"
               />
             </span>
           </h1>
@@ -37,27 +40,40 @@ const Hero = () => {
             their full potential, no matter their background. We believe in you
             and are here to support you every step of the way.
           </p>
-          <Link to="about">
+          <Link to="about" smooth duration={400}>
             <Button white>Explore</Button>
           </Link>
         </div>
+
+        {/* Visual Area */}
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl">
-          <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient ">
+          <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
             <div className="relative bg-n-8 rounded-[1rem]">
               <div className="h-[1.4rem] bg-n-10 rounded-t-[0.8rem]" />
               <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
                 <img
                   src={robot}
+                  alt="Illustration of a robot representing technology and potential"
                   className="w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%]"
                   width={1440}
                   height={1800}
-                  alt="hero"
+                  loading="lazy"
                 />
+                {/* Parallax Icons */}
                 <ScrollParallax isAbsolutelyPositioned>
-                  <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
+                  <ul
+                    className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex"
+                    aria-label="Technologies we support"
+                  >
                     {heroIcons.map((icon, index) => (
                       <li className="p-5" key={index}>
-                        <img src={icon} width={24} height={25} alt={icon} />
+                        <img
+                          src={icon.src}
+                          alt={icon.alt || `Technology ${index + 1}`}
+                          width={24}
+                          height={25}
+                          loading="lazy"
+                        />
                       </li>
                     ))}
                   </ul>
@@ -67,8 +83,8 @@ const Hero = () => {
           </div>
           <BackgroundCircles />
         </div>
-
-        {/*<CompanyLogos className="hidden relative z-10 mt-20 lg:block" />*/}
+        
+        {/* <CompanyLogos className="hidden relative z-10 mt-20 lg:block" /> */}
       </div>
     </Section>
   );

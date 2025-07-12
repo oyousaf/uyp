@@ -8,8 +8,12 @@ const About = () => {
         <Heading
           className="md:max-w-md lg:max-w-2xl text-center"
           title="About Us"
+          as="h2"
         />
-        <p className="body-1 max-w-5xl mx-auto mb-6 text-n-1 lg:mb-8 pt-6 lg:text-3xl text-xl text-center">
+        <p
+          className="body-1 max-w-5xl mx-auto mb-6 lg:mb-8 pt-6 text-xl lg:text-3xl text-n-1 text-center leading-relaxed"
+          aria-label="About United Youth Project's mission statement"
+        >
           Our mission is to improve social mobility by empowering people from
           socio-economically disadvantaged backgrounds with the life skills and
           opportunities they need to reach their full potential. We believe that
