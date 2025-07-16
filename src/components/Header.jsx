@@ -65,7 +65,7 @@ const Header = () => {
                 <Link
                   to={item.url}
                   onClick={handleNavItemClick}
-                  className={`block font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-4 px-6 py-6 md:py-8 lg:text-base lg:font-semibold lg:leading-5 lg:hover:text-color-4 xl:px-12 ${
+                  className={`block font-code text-2xl uppercase cursor-pointer text-n-1 transition-colors hover:text-color-4 px-6 py-6 md:py-8 lg:text-base lg:font-semibold lg:leading-5 lg:hover:text-color-4 xl:px-12 ${
                     item.onlyMobile ? "lg:hidden" : ""
                   } ${
                     item.url === pathname.hash
