@@ -53,15 +53,15 @@ export const navigation = [
     url: "donate",
     onlyMobile: true,
   },
-  {
-    /*
+  /*{
+    
     {
       id: "5",
       title: "Sign in",
       url: "#login",
       onlyMobile: true,
-    },*/
-  },
+    },
+  },*/
 ];
 
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
