@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Unlock Your Potential</title>
+    <title>
+      Unlock Your Potential - Empowering Through Education and Mentorship
+    </title>
     <meta
       name="description"
       content="Unlock Your Potential is a charity dedicated to improving social mobility by empowering people from socio-economically disadvantaged backgrounds with the life skills and opportunities they need to reach their full potential."
@@ -17,8 +19,10 @@
     <link rel="canonical" href="https://uyp.life" />
     <meta name="theme-color" content="#ffffff" />
 
-    <link rel="icon" href="./src/assets/favicon.ico" sizes="any" />
-    <link rel="icon" type="image/svg+xml" href="./src/assets/uyp.svg" />
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/uyp.svg" />
+    <link rel="apple-touch-icon" href="/favicon.ico" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -44,9 +48,33 @@
       content="Join us in helping individuals unlock their potential through support and mentorship."
     />
     <meta name="twitter:image" content="https://uyp.life/twitter-image.jpg" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "NGO",
+        "name": "Unlock Your Potential",
+        "alternateName": "UYP",
+        "url": "https://uyp.life",
+        "logo": "https://uyp.life/uyp.svg",
+        "description": "Unlock Your Potential is a charity dedicated to improving social mobility by empowering people from socio-economically disadvantaged backgrounds with the life skills and opportunities they need to reach their full potential.",
+        "sameAs": [
+          "https://www.linkedin.com/company/uyp",
+          "https://www.instagram.com/uyp",
+          "https://twitter.com/uyp"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "United Kingdom"
+        }
+      }
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <main role="main">
+      <div id="root"></div>
+    </main>
     <script type="module" src="/src/main.jsx" defer></script>
   </body>
 </html>
