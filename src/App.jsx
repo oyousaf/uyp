@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Values from "./components/Values";
 import Volunteer from "./components/Volunteer";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 import { useEffect, useState } from "react";
 import { animateScroll as scroll } from "react-scroll";
