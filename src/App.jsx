@@ -13,6 +13,14 @@ const App = () => {
   const [showScroll, setShowScroll] = useState(false);
 
   useEffect(() => {
+    if (window.location.hash) {
+      window.history.replaceState(
+        null,
+        "",
+        window.location.pathname + window.location.search
+      );
+    }
+
     const checkScrollTop = () => {
       setShowScroll(window.pageYOffset > 500);
     };

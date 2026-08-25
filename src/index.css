@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:opsz,wght,SOFT,WONK@9..144,600,50,1;9..144,700,50,1&display=swap");
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --font-sans: "Atkinson Hyperlegible", Arial, sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
+}
 
 :root {
   color: #fff3e6;
@@ -74,7 +76,11 @@ button {
 .hero-shell {
   isolation: isolate;
   background:
-    radial-gradient(circle at 50% 52%, rgb(255 176 111 / 0.18), transparent 35rem),
+    radial-gradient(
+      circle at 50% 52%,
+      rgb(255 176 111 / 0.18),
+      transparent 35rem
+    ),
     linear-gradient(145deg, #7a2e16 0%, #5f210f 55%, #431508 100%);
 }
 
@@ -94,8 +100,14 @@ button {
   overflow: hidden;
   border: 1px solid rgb(255 243 230 / 0.35);
   border-radius: 50%;
-  background:
-    radial-gradient(circle at 31% 24%, #ffd0aa 0%, #ee8b4d 16%, #c65327 42%, #7a2e16 68%, #351007 100%);
+  background: radial-gradient(
+    circle at 31% 24%,
+    #ffd0aa 0%,
+    #ee8b4d 16%,
+    #c65327 42%,
+    #7a2e16 68%,
+    #351007 100%
+  );
   box-shadow:
     inset -4rem -3rem 7rem rgb(38 8 2 / 0.7),
     inset 2rem 2rem 4rem rgb(255 224 197 / 0.16),
@@ -108,7 +120,12 @@ button {
   border-radius: inherit;
   background:
     radial-gradient(circle at 30% 27%, rgb(255 255 255 / 0.5), transparent 8%),
-    linear-gradient(120deg, transparent 35%, rgb(255 244 232 / 0.14) 48%, transparent 60%);
+    linear-gradient(
+      120deg,
+      transparent 35%,
+      rgb(255 244 232 / 0.14) 48%,
+      transparent 60%
+    );
 }
 
 .globe-latitude,
@@ -214,7 +231,11 @@ button {
   content: "";
   pointer-events: none;
   background:
-    radial-gradient(circle at 50% 38%, rgb(255 176 111 / 0.2), transparent 22rem),
+    radial-gradient(
+      circle at 50% 38%,
+      rgb(255 176 111 / 0.2),
+      transparent 22rem
+    ),
     linear-gradient(160deg, rgb(150 59 29 / 0.45), transparent 55%);
   opacity: 0;
   transform: scale(1.06);
@@ -301,7 +322,10 @@ button {
   border-radius: 999px;
   font-size: 0.88rem;
   font-weight: 700;
-  transition: transform 240ms ease, background-color 240ms ease, color 240ms ease;
+  transition:
+    transform 240ms ease,
+    background-color 240ms ease,
+    color 240ms ease;
 }
 
 .primary-cta {
@@ -338,7 +362,9 @@ button {
   border: 1px solid rgb(75 25 12 / 0.32);
   border-radius: 1.25rem;
   background: rgb(255 244 232 / 0.36);
-  transition: transform 240ms ease, background-color 240ms ease;
+  transition:
+    transform 240ms ease,
+    background-color 240ms ease;
 }
 
 .role-card:hover {

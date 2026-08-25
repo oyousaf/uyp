@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { HiOutlineMenuAlt4, HiOutlineX } from "react-icons/hi";
 import uypLogo from "../assets/uyp-logo.svg";
 import { navigation } from "../constants";
+import { scrollToSection } from "../utils/scrollToSection";
 
 const Header = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
@@ -40,12 +41,8 @@ const Header = () => {
   }, [openNavigation]);
 
   const handleNavigation = (event, targetId) => {
-    event.preventDefault();
     setOpenNavigation(false);
-
-    window.setTimeout(() => {
-      document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
-    }, 560);
+    scrollToSection(event, targetId, openNavigation ? 560 : 0);
   };
 
   const navigationItems = (isMobile = false) => (
@@ -69,7 +66,7 @@ const Header = () => {
             onClick={
               isMobile
                 ? (event) => handleNavigation(event, item.url)
-                : undefined
+                : (event) => scrollToSection(event, item.url)
             }
             className={
               isMobile
@@ -87,7 +84,12 @@ const Header = () => {
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 py-4 md:px-8">
       <div className="relative z-50 mx-auto flex max-w-[92rem] items-center justify-between rounded-full border border-[#fff3e6]/20 bg-[#4b190c]/80 px-5 py-3 shadow-2xl backdrop-blur-xl md:px-7">
-        <a href="#home" aria-label="Scroll to top" className="flex items-center gap-3">
+        <a
+          href="#home"
+          onClick={(event) => handleNavigation(event, "home")}
+          aria-label="Back to the top"
+          className="flex items-center gap-3"
+        >
           <img
             src={uypLogo}
             width={120}
@@ -106,6 +108,7 @@ const Header = () => {
 
         <a
           href="#donate"
+          onClick={(event) => scrollToSection(event, "donate")}
           className="hidden rounded-full bg-[#fff3e6] px-6 py-3 text-sm font-bold text-[#5f210f] transition hover:scale-[.97] hover:bg-[#ffd0aa] lg:block"
         >
           Donate

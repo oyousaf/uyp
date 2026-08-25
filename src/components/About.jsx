@@ -5,7 +5,7 @@ const About = () => (
     <div className="mx-auto max-w-[92rem]">
       <div className="grid gap-10 border-b border-black/15 pb-14 lg:grid-cols-[.7fr_2fr]">
         <div>
-          <p className="eyebrow !text-[#963b1d]">Who we are</p>
+          <p className="eyebrow text-[#963b1d]!">Who we are</p>
           <HiArrowDownRight className="mt-8 text-4xl text-[#963b1d]" />
         </div>
         <h2 className="display-title text-[clamp(2.8rem,6vw,6.8rem)] leading-[.95]">

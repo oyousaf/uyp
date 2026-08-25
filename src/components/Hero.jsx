@@ -1,4 +1,5 @@
 import { HiArrowDown, HiArrowUpRight } from "react-icons/hi2";
+import { scrollToSection } from "../utils/scrollToSection";
 
 const Hero = () => (
   <section
@@ -41,10 +42,18 @@ const Hero = () => (
         to be seen, supported and celebrated.
       </p>
       <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <a href="#volunteer" className="primary-cta">
+        <a
+          href="#volunteer"
+          onClick={(event) => scrollToSection(event, "volunteer")}
+          className="primary-cta"
+        >
           Make an impact <HiArrowUpRight />
         </a>
-        <a href="#about" className="secondary-cta">
+        <a
+          href="#about"
+          onClick={(event) => scrollToSection(event, "about")}
+          className="secondary-cta"
+        >
           Discover our mission <HiArrowDown />
         </a>
       </div>

@@ -1,11 +1,16 @@
 import { socials } from "../constants";
 import uypLogo from "../assets/uyp-logo.svg";
+import { scrollToSection } from "../utils/scrollToSection";
 
 const Footer = () => (
   <footer className="border-t border-[#fff3e6]/15 bg-[#4b190c] px-5 py-10 text-[#fff3e6] md:px-10">
     <div className="mx-auto grid max-w-[92rem] gap-10 md:grid-cols-[1fr_auto] md:items-end">
       <div>
-        <a href="#home" aria-label="Back to top">
+        <a
+          href="#home"
+          onClick={(event) => scrollToSection(event, "home")}
+          aria-label="Back to top"
+        >
           <img
             src={uypLogo}
             alt="Unlock Your Potential"

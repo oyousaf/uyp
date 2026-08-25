@@ -6,7 +6,7 @@ const Volunteer = () => (
     <div className="mx-auto max-w-[92rem]">
       <div className="grid gap-12 lg:grid-cols-[1fr_1.25fr] lg:gap-24">
         <div className="lg:sticky lg:top-32 lg:self-start">
-          <p className="eyebrow !text-[#120b08]">Volunteer with us</p>
+          <p className="eyebrow text-[#120b08]!">Volunteer with us</p>
           <h2 className="display-title mt-6 text-[clamp(3.5rem,7vw,7rem)] leading-[.86]">
             Give time. <span className="block italic text-[#fff1e2]">Gain purpose.</span>
           </h2>
@@ -32,7 +32,7 @@ const Volunteer = () => (
           Back a future <span className="block italic text-[#ffb06f]">full of potential.</span>
         </h3>
         <p className="mx-auto mt-7 max-w-xl leading-7 text-[#ffd9ba]">Your support helps us create more opportunities, reach more people and build fairer pathways into work and education.</p>
-        <a href="mailto:hello@unlockyourpotential.org.uk?subject=I%20would%20like%20to%20donate" className="primary-cta mt-9 !bg-[#fff3e6]">Talk to us about donating <HiArrowUpRight /></a>
+        <a href="mailto:hello@unlockyourpotential.org.uk?subject=I%20would%20like%20to%20donate" className="primary-cta mt-9 bg-[#fff3e6]!">Talk to us about donating <HiArrowUpRight /></a>
       </div>
     </div>
   </section>
