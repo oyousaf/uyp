@@ -1,47 +1,44 @@
-import { Link } from "react-scroll";
 import { socials } from "../constants";
-import Section from "./Section";
+import uypLogo from "../assets/uyp-logo.svg";
 
-const Footer = () => {
-  return (
-    <footer role="contentinfo">
-      <Section className="!px-0 !py-10" id="footer" crosses>
-        <div className="container flex sm:justify-between justify-center items-center gap-10 max-sm:flex-col">
-          {/* Brand Copyright */}
-          <p className="text-md text-n-1 text-center sm:text-left">
-            <Link
-              to="home"
-              smooth={true}
-              duration={300}
-              className="cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-color-4"
-              aria-label="Scroll to top"
-            >
-              &copy; {new Date().getFullYear()} Unlock Your Potential
-            </Link>
-          </p>
-
-          {/* Social Navigation */}
-          <nav aria-label="Social media links">
-            <ul className="flex gap-5 flex-wrap">
-              {socials.map((item) => (
-                <li key={item.id}>
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center w-10 h-10 bg-n-3 hover:bg-n-8 rounded-full transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-color-4"
-                    aria-label={item.title || `Visit ${item.id}`}
-                  >
-                    <item.icon className="text-color-4 text-xl hover:text-2xl transition-all duration-200" />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      </Section>
-    </footer>
-  );
-};
+const Footer = () => (
+  <footer className="border-t border-[#fff3e6]/15 bg-[#4b190c] px-5 py-10 text-[#fff3e6] md:px-10">
+    <div className="mx-auto grid max-w-[92rem] gap-10 md:grid-cols-[1fr_auto] md:items-end">
+      <div>
+        <a href="#home" aria-label="Back to top">
+          <img
+            src={uypLogo}
+            alt="Unlock Your Potential"
+            className="h-12 w-auto brightness-0 invert"
+          />
+        </a>
+        <p className="mt-5 max-w-sm text-sm leading-6 text-[#ffd0aa]">
+          Helping people realise their full potential, whatever their
+          background.
+        </p>
+      </div>
+      <div className="md:text-right">
+        <ul className="flex flex-wrap gap-2 md:justify-end">
+          {socials.map((item) => (
+            <li key={item.id}>
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={item.title}
+                className="grid h-10 w-10 place-items-center rounded-full border border-[#fff3e6]/20 transition hover:border-[#ffb06f] hover:text-[#ffb06f]"
+              >
+                <item.icon />
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-7 text-xs uppercase tracking-[0.18em] text-[#d99363]">
+          © {new Date().getFullYear()} Unlock Your Potential
+        </p>
+      </div>
+    </div>
+  </footer>
+);
 
 export default Footer;

@@ -1,65 +1,34 @@
 import { values } from "../constants";
-import Heading from "./Heading";
-import Section from "./Section";
-import ClipPath from "../assets/svg/ClipPath";
+import { HiArrowUpRight } from "react-icons/hi2";
 
-const Values = () => {
-  return (
-    <Section id="values" crosses>
-      <div className="container relative z-2">
-        <Heading
-          className="md:max-w-md lg:max-w-2xl text-center"
-          title="Our Values"
-          as="h2"
-        />
-
-        <div className="flex flex-wrap justify-center gap-10 mt-10 mb-10">
-          {values.map(({ id, title, text, imageUrl, backgroundUrl }) => (
-            <article
-              key={id}
-              className="relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem] w-full rounded-xl overflow-hidden shadow-sm transition-transform hover:scale-[1.015]"
-              style={{ backgroundImage: `url(${backgroundUrl})` }}
-              aria-labelledby={`value-${id}`}
-            >
-              <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none text-center">
-                <h3
-                  id={`value-${id}`}
-                  className="h5 text-2xl text-color-4 font-bold mb-5"
-                >
-                  {title}
-                </h3>
-                <p className="body-2 text-xl text-n-1 leading-relaxed">
-                  {text}
-                </p>
-              </div>
-
-              {/* Clip path background image */}
-              <div
-                className="absolute inset-0.5 bg-n-8"
-                style={{ clipPath: "url(#values)" }}
-                aria-hidden="true"
-              >
-                {imageUrl && (
-                  <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
-                    <img
-                      src={imageUrl}
-                      alt=""
-                      width={380}
-                      height={362}
-                      loading="lazy"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                )}
-              </div>
-
-              <ClipPath />
-            </article>
-          ))}
+const Values = () => (
+  <section id="values" className="section-shell bg-[#4b190c] text-[#fff8ef]">
+    <div className="mx-auto max-w-[92rem]">
+      <div className="mb-14 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+        <div>
+          <p className="eyebrow mb-5">What guides us</p>
+          <h2 className="display-title text-[clamp(3.5rem,8vw,8rem)] leading-[.85]">
+            Values in <span className="block italic text-[#ffb06f]">action.</span>
+          </h2>
         </div>
+        <p className="max-w-md text-lg leading-8 text-[#ffd9ba]">The principles behind every programme, partnership and conversation.</p>
       </div>
-    </Section>
-  );
-};
+      <div className="grid border-t border-[#fff3e6]/20 lg:grid-cols-2">
+        {values.map(({ id, title, text }, index) => (
+          <article key={id} className="group relative min-h-72 overflow-hidden border-b border-[#fff3e6]/20 p-7 transition-colors hover:bg-[#7a2e16] md:p-10 lg:odd:border-r">
+            <div className="flex items-start justify-between">
+              <span className="font-serif text-2xl italic text-[#ffb06f]">0{index + 1}</span>
+              <HiArrowUpRight className="text-2xl text-[#ffd9ba] transition group-hover:rotate-45 group-hover:text-[#fff8ef]" />
+            </div>
+            <div className="mt-14">
+              <h3 className="font-serif text-4xl md:text-5xl">{title}</h3>
+              <p className="mt-4 max-w-lg text-base leading-7 text-[#ffd9ba] group-hover:text-[#fff3e6]">{text}.</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 export default Values;

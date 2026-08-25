@@ -39,9 +39,10 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["var(--font-comfortaa)", ...fontFamily.sans],
-        code: "var(--font-code)",
-        grotesk: "var(--font-grotesk)",
+        sans: ["Atkinson Hyperlegible", ...fontFamily.sans],
+        serif: ["Fraunces", ...fontFamily.serif],
+        code: ["Atkinson Hyperlegible", ...fontFamily.mono],
+        grotesk: ["Fraunces", ...fontFamily.serif],
       },
       letterSpacing: {
         tagline: ".15em",

@@ -1,93 +1,59 @@
-import { curve, robot } from "../assets";
-import Button from "./Button";
-import Section from "./Section";
-import { BackgroundCircles } from "./design/Hero";
-import { heroIcons } from "../constants";
-import { ScrollParallax } from "react-just-parallax";
-import { useRef } from "react";
-import { Link } from "react-scroll";
+import { HiArrowDown, HiArrowUpRight } from "react-icons/hi2";
 
-const Hero = () => {
-  const parallaxRef = useRef(null);
-
-  return (
-    <Section
-      id="home"
-      className="pt-[12rem] -mt-[5.25rem]"
-      customPaddings
-      crosses
-      crossesOffset="lg:translate-y-[5.25rem]"
-    >
-      <div className="container relative" ref={parallaxRef}>
-        {/* Text Block */}
-        <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
-          <h1 className="h1 mb-6">
-            <span className="inline-block relative">
-              Realise Your Full Potential
-              <img
-                src={curve}
-                className="absolute top-full left-0 w-full xl:-mt-2"
-                width={624}
-                height={28}
-                loading="lazy"
-                alt=""
-                aria-hidden="true"
-              />
-            </span>
-          </h1>
-          <p className="body-1 max-w-3xl mx-auto mb-6 text-n-1 lg:mb-8 pt-6">
-            We are a non-profit organisation dedicated to helping people realise
-            their full potential, no matter their background. We believe in you
-            and are here to support you every step of the way.
-          </p>
-          <Link to="about" smooth duration={400}>
-            <Button white>Explore</Button>
-          </Link>
-        </div>
-
-        {/* Visual Area */}
-        <div className="relative max-w-[23rem] mx-auto md:max-w-5xl">
-          <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
-            <div className="relative bg-n-8 rounded-[1rem]">
-              <div className="h-[1.4rem] bg-n-10 rounded-t-[0.8rem]" />
-              <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
-                <img
-                  src={robot}
-                  alt="Illustration of a robot representing technology and potential"
-                  className="w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%]"
-                  width={1440}
-                  height={1800}
-                  loading="lazy"
-                />
-                {/* Parallax Icons */}
-                <ScrollParallax isAbsolutelyPositioned>
-                  <ul
-                    className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex"
-                    aria-label="Technologies we support"
-                  >
-                    {heroIcons.map((icon, index) => (
-                      <li className="p-5" key={index}>
-                        <img
-                          src={icon}
-                          alt={icon.alt || `Technology ${index + 1}`}
-                          width={24}
-                          height={25}
-                          loading="lazy"
-                        />
-                      </li>
-                    ))}
-                  </ul>
-                </ScrollParallax>
-              </div>
-            </div>
-          </div>
-          <BackgroundCircles />
-        </div>
-        
-        {/* <CompanyLogos className="hidden relative z-10 mt-20 lg:block" /> */}
+const Hero = () => (
+  <section
+    id="home"
+    className="hero-shell relative flex min-h-screen items-center overflow-hidden px-5 pb-16 pt-28 md:px-10"
+  >
+    <div className="hero-sphere-stage" aria-hidden="true">
+      <div className="hero-globe">
+        <span className="globe-glow" />
+        <span className="globe-latitude globe-latitude-one" />
+        <span className="globe-latitude globe-latitude-two" />
+        <span className="globe-meridian globe-meridian-one" />
+        <span className="globe-meridian globe-meridian-two" />
       </div>
-    </Section>
-  );
-};
+      <div className="globe-orbit globe-orbit-one" />
+      <div className="globe-orbit globe-orbit-two" />
+      <svg className="globe-copy" viewBox="0 0 600 600">
+        <defs>
+          <path
+            id="globe-copy-path"
+            d="M300,300 m-252,0 a252,252 0 1,1 504,0 a252,252 0 1,1 -504,0"
+          />
+        </defs>
+        <text>
+          <textPath href="#globe-copy-path" startOffset="0%">
+            UNLOCK YOUR POTENTIAL • OPPORTUNITY FOR EVERYONE •
+          </textPath>
+        </text>
+      </svg>
+    </div>
+
+    <div className="relative z-10 mx-auto flex w-full max-w-[92rem] flex-col items-center text-center">
+      <p className="eyebrow mb-6">Independent charity · United Kingdom</p>
+      <h1 className="display-title max-w-5xl text-[clamp(4rem,10vw,9.5rem)] leading-[0.78] text-[#fff8ef]">
+        Realise your
+        <span className="block italic text-[#ffd0aa]">full potential.</span>
+      </h1>
+      <p className="mx-auto mt-9 max-w-xl text-base leading-7 text-[#ffe1c8] md:text-lg md:leading-8">
+        Skills, confidence and opportunity for people whose potential deserves
+        to be seen, supported and celebrated.
+      </p>
+      <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a href="#volunteer" className="primary-cta">
+          Make an impact <HiArrowUpRight />
+        </a>
+        <a href="#about" className="secondary-cta">
+          Discover our mission <HiArrowDown />
+        </a>
+      </div>
+    </div>
+
+    <div className="hero-footnote" aria-hidden="true">
+      Scroll to discover
+    </div>
+  </section>
+);
 
 export default Hero;

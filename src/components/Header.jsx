@@ -1,122 +1,112 @@
-import { useLocation } from "react-router-dom";
-import { disablePageScroll, enablePageScroll } from "scroll-lock";
-import { useState } from "react";
-import { Link } from "react-scroll";
-
-import { uypLogo } from "../assets";
-import { navigation, socials } from "../constants";
-import Button from "./Button";
-import MenuSvg from "../assets/svg/MenuSvg";
-import { HamburgerMenu } from "./design/Header";
+import { useEffect, useState } from "react";
+import { HiOutlineMenuAlt4, HiOutlineX } from "react-icons/hi";
+import uypLogo from "../assets/uyp-logo.svg";
+import { navigation } from "../constants";
 
 const Header = () => {
-  const pathname = useLocation();
   const [openNavigation, setOpenNavigation] = useState(false);
 
-  const toggleNavigation = () => {
-    setOpenNavigation((prev) => {
-      if (prev) enablePageScroll();
-      else disablePageScroll();
-      return !prev;
-    });
-  };
+  useEffect(() => {
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setOpenNavigation(false);
+    };
 
-  const handleNavItemClick = () => {
-    if (openNavigation) {
-      enablePageScroll();
-      setOpenNavigation(false);
-    }
-  };
+    document.body.style.overflow = openNavigation ? "hidden" : "";
+    window.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [openNavigation]);
+
+  const navigationItems = (isMobile = false) => (
+    <ul className={isMobile ? "flex flex-col items-center gap-3" : "flex items-center gap-1"}>
+      {navigation.map((item, index) => (
+        <li
+          key={item.id}
+          className={!isMobile && item.onlyMobile ? "hidden" : ""}
+          style={
+            isMobile
+              ? {
+                  "--menu-open-delay": 90 + index * 65 + "ms",
+                  "--menu-close-delay":
+                    (navigation.length - 1 - index) * 35 + "ms",
+                }
+              : undefined
+          }
+        >
+          <a
+            href={"#" + item.url}
+            onClick={() => setOpenNavigation(false)}
+            className={
+              isMobile
+                ? "block rounded-full px-6 py-3 text-3xl font-bold text-[#fff8ef] transition hover:bg-white/10 hover:text-[#ffd0aa]"
+                : "block rounded-full px-5 py-3 text-sm font-semibold text-[#fff8ef] transition hover:bg-white/10 hover:text-[#ffd0aa]"
+            }
+          >
+            {item.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 border-b border-n-6 ${
-        openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"
-      }`}
-      role="banner"
-    >
-      <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
-        <Link
-          to="home"
-          aria-label="Scroll to top"
-          className="block cursor-pointer lg:w-[12rem] w-[5rem] xl:mr-8"
-        >
+    <header className="fixed inset-x-0 top-0 z-50 px-4 py-4 md:px-8">
+      <div className="relative z-50 mx-auto flex max-w-[92rem] items-center justify-between rounded-full border border-[#fff3e6]/20 bg-[#4b190c]/80 px-5 py-3 shadow-2xl backdrop-blur-xl md:px-7">
+        <a href="#home" aria-label="Scroll to top" className="flex items-center gap-3">
           <img
             src={uypLogo}
-            width={100}
-            height={50}
-            alt="United Youth Project logo"
-            className="h-auto w-full"
+            width={120}
+            height={48}
+            alt="Unlock Your Potential"
+            className="h-8 w-auto brightness-0 invert md:h-10"
           />
-        </Link>
+          <span className="hidden text-[0.65rem] font-bold uppercase tracking-[0.24em] text-[#fff3e6] sm:block">
+            Unlock your potential
+          </span>
+        </a>
 
-        {/* Navigation */}
-        <nav
-          className={`${
-            openNavigation ? "flex" : "hidden"
-          } fixed z-10 top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent`}
-          aria-label="Main navigation"
-          aria-expanded={openNavigation}
-          aria-hidden={!openNavigation}
-        >
-          <ul className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row font-bold">
-            {navigation.map((item) => (
-              <li key={item.id}>
-                <Link
-                  to={item.url}
-                  onClick={handleNavItemClick}
-                  className={`block font-code text-2xl uppercase cursor-pointer text-n-1 transition-colors hover:text-color-4 px-6 py-6 md:py-8 lg:text-base lg:font-semibold lg:leading-5 lg:hover:text-color-4 xl:px-12 ${
-                    item.onlyMobile ? "lg:hidden" : ""
-                  } ${
-                    item.url === pathname.hash
-                      ? "lg:text-color-4"
-                      : "lg:text-n-1/90"
-                  }`}
-                  tabIndex={0}
-                  role="link"
-                >
-                  {item.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <HamburgerMenu />
+        <nav className="hidden lg:block" aria-label="Main navigation">
+          {navigationItems()}
         </nav>
 
-        {/* Donate + Socials */}
-        <div className="hidden lg:flex flex-col items-center">
-          <Link to="donate" tabIndex={0}>
-            <Button className="mt-4 mb-4 hover:text-color-4">Donate</Button>
-          </Link>
-          <ul className="flex gap-5 flex-wrap" aria-label="Social media links">
-            {socials.map((item) => (
-              <li key={item.id}>
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center w-7 h-7 mb-4 bg-n-3 hover:bg-n-8 rounded-full transition-all"
-                  aria-label={item.title}
-                >
-                  <item.icon className="text-color-4" />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Mobile Menu Toggle */}
-        <Button
-          className="ml-auto lg:hidden"
-          px="px-3"
-          onClick={toggleNavigation}
-          aria-label="Toggle navigation menu"
-          aria-expanded={openNavigation}
-          aria-controls="navigation"
+        <a
+          href="#donate"
+          className="hidden rounded-full bg-[#fff3e6] px-6 py-3 text-sm font-bold text-[#5f210f] transition hover:scale-[.97] hover:bg-[#ffd0aa] lg:block"
         >
-          <MenuSvg openNavigation={openNavigation} />
-        </Button>
+          Donate
+        </a>
+
+        <button
+          type="button"
+          className="grid h-10 w-10 place-items-center rounded-full border border-[#fff3e6]/30 text-xl text-[#fff8ef] lg:hidden"
+          onClick={() => setOpenNavigation((value) => !value)}
+          aria-label={openNavigation ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={openNavigation}
+          aria-controls="mobile-navigation"
+        >
+          {openNavigation ? <HiOutlineX /> : <HiOutlineMenuAlt4 />}
+        </button>
       </div>
+
+      <nav
+        id="mobile-navigation"
+        className="mobile-navigation fixed inset-0 z-40 flex h-dvh flex-col items-center justify-center overflow-y-auto bg-[#5f210f] px-6 pb-12 pt-28 lg:hidden"
+        data-open={openNavigation}
+        aria-hidden={!openNavigation}
+        aria-label="Mobile navigation"
+      >
+        <p className="mobile-menu-kicker eyebrow mb-8">Navigate</p>
+        {navigationItems(true)}
+        <a
+          href="mailto:hello@unlockyourpotential.org.uk"
+          className="mobile-menu-contact mt-10 text-sm font-bold text-[#ffd0aa] underline decoration-white/30 underline-offset-8"
+        >
+          hello@unlockyourpotential.org.uk
+        </a>
+      </nav>
     </header>
   );
 };

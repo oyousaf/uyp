@@ -1,4 +1,3 @@
-import ButtonGradient from "./assets/svg/ButtonGradient";
 import About from "./components/About";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -8,31 +7,27 @@ import Volunteer from "./components/Volunteer";
 import { Analytics } from "@vercel/analytics/react";
 
 import { useEffect, useState } from "react";
-import { animateScroll as scroll } from "react-scroll";
 import { FaArrowUp } from "react-icons/fa";
 
 const App = () => {
   const [showScroll, setShowScroll] = useState(false);
 
-  const checkScrollTop = () => {
-    if (!showScroll && window.pageYOffset > 500) {
-      setShowScroll(true);
-    } else if (showScroll && window.pageYOffset <= 500) {
-      setShowScroll(false);
-    }
-  };
-
   useEffect(() => {
+    const checkScrollTop = () => {
+      setShowScroll(window.pageYOffset > 500);
+    };
+
+    checkScrollTop();
     window.addEventListener("scroll", checkScrollTop);
     return () => window.removeEventListener("scroll", checkScrollTop);
-  }, [showScroll]);
+  }, []);
 
   const scrollToTop = () => {
-    scroll.scrollToTop({ duration: 300, smooth: "easeInOutQuad" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
     <>
-      <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
+      <div className="min-h-screen overflow-hidden">
         <Header />
         <Hero />
         <About />
@@ -41,14 +36,15 @@ const App = () => {
         <Footer />
       </div>
       <Analytics />
-      <ButtonGradient />
       {showScroll && (
-        <div
+        <button
+          type="button"
           onClick={scrollToTop}
-          className="fixed z-5 bottom-12 right-12 md:bottom-8 md:right-8 bg-color-1 hover:bg-color-3 text-n-1 hover:text-color-4 p-4 rounded-full transition-all duration-300 ease-in-out cursor-pointer text-2xl md:text-xl"
+          aria-label="Scroll to top"
+          className="fixed z-50 bottom-6 right-6 grid h-12 w-12 place-items-center rounded-full border border-[#ffd0aa]/50 bg-[#5f210f]/90 text-[#fff8ef] shadow-2xl backdrop-blur transition hover:-translate-y-1 hover:border-[#fff8ef]"
         >
           <FaArrowUp />
-        </div>
+        </button>
       )}
     </>
   );
