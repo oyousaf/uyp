@@ -31,7 +31,7 @@ const Hero = () => (
       </svg>
     </div>
 
-    <div className="relative z-10 mx-auto flex w-full max-w-[92rem] flex-col items-center text-center">
+    <div className="relative z-10 mx-auto flex w-full max-w-368 flex-col items-center text-center">
       <p className="eyebrow mb-6">Independent charity · United Kingdom</p>
       <h1 className="display-title max-w-5xl text-[clamp(4rem,10vw,9.5rem)] leading-[0.78] text-[#fff8ef]">
         Realise your

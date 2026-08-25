@@ -83,7 +83,7 @@ const Header = () => {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 py-4 md:px-8">
-      <div className="relative z-50 mx-auto flex max-w-[92rem] items-center justify-between rounded-full border border-[#fff3e6]/20 bg-[#4b190c]/80 px-5 py-3 shadow-2xl backdrop-blur-xl md:px-7">
+      <div className="relative z-50 mx-auto flex max-w-368 items-center justify-between rounded-full border border-[#fff3e6]/20 bg-[#4b190c]/80 px-5 py-3 shadow-2xl backdrop-blur-xl md:px-7">
         <a
           href="#home"
           onClick={(event) => handleNavigation(event, "home")}

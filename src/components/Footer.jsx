@@ -4,7 +4,7 @@ import { scrollToSection } from "../utils/scrollToSection";
 
 const Footer = () => (
   <footer className="border-t border-[#fff3e6]/15 bg-[#4b190c] px-5 py-10 text-[#fff3e6] md:px-10">
-    <div className="mx-auto grid max-w-[92rem] gap-10 md:grid-cols-[1fr_auto] md:items-end">
+    <div className="mx-auto grid max-w-368 gap-10 md:grid-cols-[1fr_auto] md:items-end">
       <div>
         <a
           href="#home"
