@@ -12,12 +12,14 @@ export const volunteer = [
   {
     id: 0,
     title: "Trustees",
-    description: "Meet quarterly to make key governance decisions and help steer the charity",
+    description:
+      "Meet quarterly to make key governance decisions and help steer the charity",
   },
   {
     id: 1,
     title: "Treasurer / Accountant",
-    description: "Help ensure our financial sustainability and effective management of finances",
+    description:
+      "Help ensure our financial sustainability and effective management of finances",
   },
   {
     id: 2,
@@ -27,17 +29,20 @@ export const volunteer = [
   {
     id: 3,
     title: "Volunteer Coordinator",
-    description: "Recruit, select and train volunteers while shaping our volunteer programme",
+    description:
+      "Recruit, select and train volunteers while shaping our volunteer programme",
   },
   {
     id: 4,
     title: "Graphic Designer",
-    description: "Create thoughtful digital and print designs for campaigns and social media",
+    description:
+      "Create thoughtful digital and print designs for campaigns and social media",
   },
   {
     id: 5,
     title: "Website Designer",
-    description: "Help evolve our digital presence into a useful home for our community",
+    description:
+      "Help evolve our digital presence into a useful home for our community",
   },
 ];
 
@@ -70,9 +75,29 @@ export const values = [
 ];
 
 export const socials = [
-  { id: "0", title: "Facebook", icon: FaFacebookF, url: "https://facebook.com/" },
-  { id: "1", title: "Instagram", icon: FaInstagram, url: "https://instagram.com/" },
-  { id: "2", title: "LinkedIn", icon: FaLinkedinIn, url: "https://linkedin.com/" },
-  { id: "3", title: "Telegram", icon: FaTelegramPlane, url: "https://telegram.org/" },
+  {
+    id: "0",
+    title: "Facebook",
+    icon: FaFacebookF,
+    url: "https://facebook.com/",
+  },
+  {
+    id: "1",
+    title: "Instagram",
+    icon: FaInstagram,
+    url: "https://instagram.com/",
+  },
+  {
+    id: "2",
+    title: "LinkedIn",
+    icon: FaLinkedinIn,
+    url: "https://linkedin.com/",
+  },
+  {
+    id: "3",
+    title: "Telegram",
+    icon: FaTelegramPlane,
+    url: "https://telegram.org/",
+  },
   { id: "4", title: "X", icon: FaX, url: "https://x.com/" },
 ];
