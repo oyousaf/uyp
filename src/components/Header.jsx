@@ -46,7 +46,13 @@ const Header = () => {
   };
 
   const navigationItems = (isMobile = false) => (
-    <ul className={isMobile ? "flex flex-col items-center gap-3" : "flex items-center gap-1"}>
+    <ul
+      className={
+        isMobile
+          ? "flex flex-col items-center gap-3"
+          : "flex items-center gap-1"
+      }
+    >
       {navigation.map((item, index) => (
         <li
           key={item.id}
@@ -118,7 +124,9 @@ const Header = () => {
           type="button"
           className="grid h-10 w-10 place-items-center rounded-full border border-[#fff3e6]/30 text-xl text-[#fff8ef] lg:hidden"
           onClick={() => setOpenNavigation((value) => !value)}
-          aria-label={openNavigation ? "Close navigation menu" : "Open navigation menu"}
+          aria-label={
+            openNavigation ? "Close navigation menu" : "Open navigation menu"
+          }
           aria-expanded={openNavigation}
           aria-controls="mobile-navigation"
         >

@@ -17,7 +17,7 @@ const App = () => {
       window.history.replaceState(
         null,
         "",
-        window.location.pathname + window.location.search
+        window.location.pathname + window.location.search,
       );
     }
 
