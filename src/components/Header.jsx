@@ -1,24 +1,52 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { HiOutlineMenuAlt4, HiOutlineX } from "react-icons/hi";
 import uypLogo from "../assets/uyp-logo.svg";
 import { navigation } from "../constants";
 
 const Header = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
+  const scrollPosition = useRef(0);
 
   useEffect(() => {
     const closeOnEscape = (event) => {
       if (event.key === "Escape") setOpenNavigation(false);
     };
 
-    document.body.style.overflow = openNavigation ? "hidden" : "";
     window.addEventListener("keydown", closeOnEscape);
 
     return () => {
-      document.body.style.overflow = "";
       window.removeEventListener("keydown", closeOnEscape);
     };
+  }, []);
+
+  useEffect(() => {
+    if (!openNavigation) return undefined;
+
+    scrollPosition.current = window.scrollY;
+    document.body.style.position = "fixed";
+    document.body.style.top = "-" + scrollPosition.current + "px";
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
+      window.scrollTo(0, scrollPosition.current);
+    };
   }, [openNavigation]);
+
+  const handleNavigation = (event, targetId) => {
+    event.preventDefault();
+    setOpenNavigation(false);
+
+    window.setTimeout(() => {
+      document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+    }, 560);
+  };
 
   const navigationItems = (isMobile = false) => (
     <ul className={isMobile ? "flex flex-col items-center gap-3" : "flex items-center gap-1"}>
@@ -38,7 +66,11 @@ const Header = () => {
         >
           <a
             href={"#" + item.url}
-            onClick={() => setOpenNavigation(false)}
+            onClick={
+              isMobile
+                ? (event) => handleNavigation(event, item.url)
+                : undefined
+            }
             className={
               isMobile
                 ? "block rounded-full px-6 py-3 text-3xl font-bold text-[#fff8ef] transition hover:bg-white/10 hover:text-[#ffd0aa]"
@@ -93,19 +125,21 @@ const Header = () => {
 
       <nav
         id="mobile-navigation"
-        className="mobile-navigation fixed inset-0 z-40 flex h-dvh flex-col items-center justify-center overflow-y-auto bg-[#5f210f] px-6 pb-12 pt-28 lg:hidden"
+        className="mobile-navigation fixed inset-0 z-40 overflow-x-hidden overflow-y-auto bg-[#5f210f] lg:hidden"
         data-open={openNavigation}
         aria-hidden={!openNavigation}
         aria-label="Mobile navigation"
       >
-        <p className="mobile-menu-kicker eyebrow mb-8">Navigate</p>
-        {navigationItems(true)}
-        <a
-          href="mailto:hello@unlockyourpotential.org.uk"
-          className="mobile-menu-contact mt-10 text-sm font-bold text-[#ffd0aa] underline decoration-white/30 underline-offset-8"
-        >
-          hello@unlockyourpotential.org.uk
-        </a>
+        <div className="mobile-navigation-inner">
+          <p className="mobile-menu-kicker eyebrow mb-8">Navigate</p>
+          {navigationItems(true)}
+          <a
+            href="mailto:hello@unlockyourpotential.org.uk"
+            className="mobile-menu-contact mt-10 max-w-full break-all text-center text-sm font-bold text-[#ffd0aa] underline decoration-white/30 underline-offset-8"
+          >
+            hello@unlockyourpotential.org.uk
+          </a>
+        </div>
       </nav>
     </header>
   );
